@@ -1,0 +1,439 @@
+<!Doctypehtml>
+<html>
+
+<head>
+
+    <title>Home Page</title>
+    <style>
+        @import 'https://fonts.googleapis.com/css?family=Roboto+Slab';
+
+        *{
+                  font-family: "Roboto Slab", serif;
+
+        }
+        div.navbar {
+            font-family: 'Roboto Slab', serif;
+            margin: 0 auto;
+            padding: 25px;
+            text-align: center;
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            width: 100%;
+            height: 20px;
+            box-shadow: 5px 5px 5px grey;
+
+
+        }
+
+        div.navbar a {
+            color: #FFF;
+            text-decoration: none;
+            font: 20px 'Roboto Slab', serif;
+            margin: 0px 10px;
+            padding: 10px 10px;
+            position: relative;
+            z-index: 0;
+            cursor: pointer;
+        }
+
+
+        .red {
+            background: #c11f1f;
+        }
+
+
+        div.lines a:before,
+        div.lines a:after {
+            position: absolute;
+            opacity: 0;
+            width: 0%;
+            height: 2px;
+            content: '';
+            background: #fff;
+            transition: all 0.6s;
+        }
+
+        div.lines a:before {
+            left: 0px;
+            top: 0px;
+        }
+
+        div.lines a:after {
+            right: 0px;
+            bottom: 0px;
+        }
+
+        div.lines a:hover:before,
+        div.lines a:hover:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+        div.lines a:hover:before,
+        div.lines a:hover:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+        div.lines a.active:before,
+        div.lines a.active:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+        div.lines a.active:before,
+        div.lines a.active:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+
+        html,
+        body {
+            margin: 0px;
+            overflow: hidden;
+        }
+
+
+        div.navbar {
+            transform: initial;
+            transform: unset;
+
+            font-family: 'Roboto Slab', serif;
+            margin: 0 auto;
+            padding: 25px;
+            text-align: center;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            width: 100%;
+            height: 20px;
+
+        }
+
+        div.navbar a {
+            color: #FFF;
+            text-decoration: none;
+            font: 20px 'Roboto Slab', serif;
+            margin: 0px 10px;
+            padding: 10px 10px;
+            position: relative;
+            z-index: 0;
+            cursor: pointer;
+        }
+
+
+        .red {
+            background: #c11f1f;
+        }
+
+
+        div.lines a:before,
+        div.lines a:after {
+            position: absolute;
+            opacity: 0;
+            width: 0%;
+            height: 2px;
+            content: '';
+            background: #fff;
+            transition: all 0.6s;
+        }
+
+        div.lines a:before {
+            left: 0px;
+            top: 0px;
+        }
+
+        div.lines a:after {
+            right: 0px;
+            bottom: 0px;
+        }
+
+        div.lines a:hover:before,
+        div.lines a:hover:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+
+        #animation a {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            z-index: 2;
+            display: inline-block;
+            transform: translate(0, -50%);
+
+            color: #fff;
+            font-family: 'Roboto Slab', serif;
+        }
+
+
+        #animation a {
+            padding-top: 60px;
+        }
+
+        #animation a span {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            margin-left: -12px;
+            border-left: 9px solid white;
+            border-bottom: 9px solid white;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-animation: anim 2s infinite;
+            animation: anim 2s infinite;
+            box-sizing: border-box;
+        }
+
+        @-webkit-keyframes anim {
+            0% {
+                -webkit-transform: rotate(-45deg) translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes anim {
+            0% {
+                transform: rotate(-45deg) translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(-45deg) translate(-20px, 20px);
+                opacity: 0;
+            }
+        }
+
+
+
+
+
+        /*SETUP*/
+
+        html {
+            height: 100%;
+
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+
+            font-family: 'Roboto Slab', 'serif';
+
+        }
+
+
+
+
+
+
+        /*SECTION PARTS SIZING*/
+
+        h1 {
+            font-size: 250%
+        }
+
+        .header h1 {
+            margin-top: -40px;
+        }
+
+        p,
+        ol {
+            font-size: 1.2em;
+            line-height: 150%;
+            color: black;
+        }
+
+        .section {
+            position: relative;
+            padding: 10% 10%;
+            min-height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 5px 1px rgba(0, 0, 0, .7), 0 -5px 1px rgba(0, 0, 0, .7);
+            background: 50% 50% / cover;
+        }
+
+
+
+        /*SECTION DATA BOXES*/
+
+        .text {
+            width: 90%;
+            padding: 10px 40px;
+            border-radius: 5px;
+            background: rgba(200, 200, 200, .7);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .8);
+        }
+
+        #section1 .text {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header,
+        .footer {
+            text-align: center;
+            font-size: 175%;
+            color: #fff;
+            text-shadow: 0 2px 2px #000;
+        }
+
+
+
+        /*SECTION IMAGES*/
+
+        #title {
+            background-image: url("https://www.doctorswithoutborders.ca/sites/default/files/http%3A//media.msf.org/Docs/MSF/Media/TR1/e/9/f/7/MSF114456.jpg");
+            background-attachment: fixed;
+        }
+
+        #section1 {
+            background-image: url("https://i.stack.imgur.com/TNXl2.png");
+            transform: translateZ(-1px) scale(2);
+            z-index: -1;
+        }
+
+        .scrolling-content {
+            width: 100vw;
+            height: calc(100vh - 70px);
+            overflow-y: scroll;
+            overflow-x: hidden;
+            perspective: 1px;
+            margin-top: 70px
+        }
+
+        #demo {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            z-index: 1;
+            padding: 5px;
+            margin: 0px;
+        }
+
+
+        #overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('http://www.monsterchildren.com/wp-content/uploads/2017/01/MC-syrian-civil-war-getty.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            z-index: 2;
+        }
+
+        #text {
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            font-size: 50px;
+            text-align: center;
+            color: white;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+
+        #continue {
+            text-align: center;
+            font-size: 30px;
+            color: white;
+        }
+    </style>
+
+    <link rel="shortcut icon" href="DWB1.ico" />
+
+</head>
+
+
+
+<body onload=on()>
+
+    <div id="overlay" onclick="off()">
+        <div id="text">70% of people in Syria have no access to healthacare but the organisation Doctors Without Borders give them a chance! <br/>
+            <p id='continue'>Click to continue</p>
+        </div>
+    </div>
+    <div class="navbar red lines">
+        <a alt="Home" class='active' href='home%20page.html'>Home</a>
+        <a alt="What" href='What%20they%20do%20page.html'>What do Doctors Without Borders do?</a>
+        <a alt="Gallery" href='Galllery.html'>Gallery</a>
+
+        <a alt="Donate" href='donate%20page.html'>Donate</a>
+
+    </div>
+
+
+
+    <div class='scrolling-content'>
+
+
+        <div id="title" class="section header">
+            <h1>Doctors Without Borders</h1>
+            <section id="animation">
+                <a><span></span>Scroll</a>
+            </section>
+            <a href='https://www.doctorswithoutborders.org/'><img src="logoDWB.png"  height="200" id="demo"></a>
+        </div>
+
+        <div id="section1" class="section">
+            <div class='text'>
+                <h1><u>What do they do?</u></h1>
+                <p>Doctors without borders are a medical humanitarian organization. The Doctors without borders founded in France called Medicines Sans Frontiers (MSF). This non-governmental organization helps people in need of medical assistance in war-torn regions, developing countries with a weak infrastructure as well as countries affected by endemic diseases. The majority of the members of the organization are volunteers of which are doctors, nurses and logistical experts. The organization Doctors without borders has a vision to ensure healthy lives and promote well-being for all at all ages. The organization has set the following goals to be achieved by 2030:</p>
+                <ol>
+                    <li>End preventable deaths of newborns, children and pregnant women;</li>
+                    <li>End epidemics such as AIDS, tuberculosis, and malaria;</li>
+                    <li> Guarantee broader access to healthcare, vaccines and medicines;</li>
+                    <li>End malnutrition;</li>
+                    <li>Improve hygiene and sanitation;</li>
+                    <li>Improve emergency response;</li>
+                    <li>Achieve universal health coverage.</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function on() {
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+    

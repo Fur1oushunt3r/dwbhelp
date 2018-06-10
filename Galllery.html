@@ -1,0 +1,580 @@
+<!Doctype html>
+<html>
+<head>
+
+    <style>
+        @import 'https://fonts.googleapis.com/css?family=Roboto+Slab';
+        *{
+            font-family: 'Roboto Slab', serif;
+        }
+        body{
+            background-color:#b9ddf7;
+        }
+        div.navbar {
+            font-family: 'Roboto Slab', serif;
+            margin: 0 auto;
+            padding: 25px;
+            text-align: center;
+            top: 0;
+            width: 100%;
+            height: 20px;
+            box-shadow: 5px 5px 5px grey;
+
+
+        }
+
+        div.navbar a {
+            color: #FFF;
+            text-decoration: none;
+            font: 20px 'Roboto Slab', serif;
+            margin: 0px 10px;
+            padding: 10px 10px;
+            position: relative;
+            z-index: 0;
+            cursor: pointer;
+        }
+
+
+        .red {
+            background: #c11f1f;
+        }
+
+
+        div.lines a:before,
+        div.lines a:after {
+            position: absolute;
+            opacity: 0;
+            width: 0%;
+            height: 2px;
+            content: '';
+            background: #fff;
+            transition: all 0.6s;
+        }
+
+        div.lines a:before {
+            left: 0px;
+            top: 0px;
+        }
+
+        div.lines a:after {
+            right: 0px;
+            bottom: 0px;
+        }
+
+        div.lines a:hover:before,
+        div.lines a:hover:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+        div.lines a:hover:before,
+        div.lines a:hover:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+        div.lines a.active:before,
+        div.lines a.active:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+        div.lines a.active:before,
+        div.lines a.active:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+
+        html,
+        body {
+            margin: 0px;
+        }
+
+
+        div.navbar {
+            transform: initial;
+            transform: unset;
+
+            font-family: 'Roboto Slab', serif;
+            margin: 0 auto;
+            padding: 25px;
+            text-align: center;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            width: 100%;
+            height: 20px;
+
+        }
+
+        div.navbar a {
+            color: #FFF;
+            text-decoration: none;
+            font: 20px 'Roboto Slab', serif;
+            margin: 0px 10px;
+            padding: 10px 10px;
+            position: relative;
+            z-index: 0;
+            cursor: pointer;
+        }
+
+
+        .red {
+            background: #c11f1f;
+        }
+
+
+        div.lines a:before,
+        div.lines a:after {
+            position: absolute;
+            opacity: 0;
+            width: 0%;
+            height: 2px;
+            content: '';
+            background: #fff;
+            transition: all 0.6s;
+        }
+
+        div.lines a:before {
+            left: 0px;
+            top: 0px;
+        }
+
+        div.lines a:after {
+            right: 0px;
+            bottom: 0px;
+        }
+
+        div.lines a:hover:before,
+        div.lines a:hover:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+
+        #animation a {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            z-index: 2;
+            display: inline-block;
+            transform: translate(0, -50%);
+
+            color: #fff;
+            font-family: 'Roboto Slab', serif;
+        }
+
+
+        #animation a {
+            padding-top: 60px;
+        }
+
+        #animation a span {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            margin-left: -12px;
+            border-left: 9px solid white;
+            border-bottom: 9px solid white;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-animation: anim 2s infinite;
+            animation: anim 2s infinite;
+            box-sizing: border-box;
+        }
+
+        @-webkit-keyframes anim {
+            0% {
+                -webkit-transform: rotate(-45deg) translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes anim {
+            0% {
+                transform: rotate(-45deg) translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(-45deg) translate(-20px, 20px);
+                opacity: 0;
+            }
+        }
+
+
+
+        *:not(div.navbar) {
+            box-sizing: border-box;
+        }
+
+        .row>.col {
+            padding: 0 3px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .col {
+            display: inline-block;
+            ;
+            width: 32%;
+        }
+
+        .picture-background {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .gallery {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0);
+            margin: auto;
+            padding: 0;
+            width: 1000px;
+            max-width: 1000px;
+        }
+
+        .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .Slides {
+            display: none;
+        }
+
+        .cursor {
+            cursor: pointer
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .numbered {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        img {
+            margin-bottom: 4px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+
+
+        .hover {
+            opacity: 1;
+        }
+
+        .active,
+        .hover:hover {
+            opacity: 1;
+        }
+
+        img.hover {
+            transition: 0.3s
+        }
+
+        .hover:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        }
+        
+        h2{
+            font-size:50px;
+            color:white;
+        }
+    </style>
+
+    <link rel="shortcut icon" href="DWB1.ico" />
+
+</head>
+
+
+<body>
+
+    <div class="navbar red lines">
+        <a alt="Home" href='home%20page.html'>Home</a>
+        <a alt="What" href='What%20they%20do%20page.html'>What do Doctors Without Borders do?</a>
+        <a alt="Gallery" class='active' href='Galllery.html'>Gallery</a>
+
+        <a alt="Donate" href='donate%20page.html'>Donate</a>
+    </div>
+
+    <h2 style="text-align:center; margin-top: 80px;">Gallery</h2>
+
+    <div class="row">
+        <div class="col">
+            <img src="http://ronlinstudios.se/wp-content/uploads/2011/11/56594.jpg" style="width: 100%; height:280px;" , onclick="Fileopen();Slideon(1)" class="hover over">
+        </div>
+        <div class="col">
+            <img src="https://s-i.huffpost.com/gen/2072206/images/o-DOCTORS-WITHOUT-BORDERS-EBOLA-facebook.jpg" style="width:100%; height:280px;" onclick="Fileopen();Slideon(2)" class="hover over">
+        </div>
+        <div class="col">
+            <img src="https://charity.org/sites/default/files/styles/flexslider_full/public/multimedia/photos/Doctors%20Without%20Borders5.jpg?itok=VK2CGb0d" style="width:100%; height:280px;" onclick="Fileopen();Slideon(3)" class="hover over">
+        </div>
+    </div>
+    <div class='row'>
+        <div class="col">
+            <img src="https://vid.alarabiya.net/images/2016/01/19/718ab6b7-687b-4101-a722-3bc2375dc4a5/718ab6b7-687b-4101-a722-3bc2375dc4a5_16x9_788x442.jpg" style="width:100%; height:280px;" onclick="Fileopen();Slideon(4)" class="hover over">
+        </div>
+        <div class="col">
+<div>
+  <img class="mySlides" src="https://i.embed.ly/1/display/resize?key=1e6a1a1efdb011df84894040444cdc60&url=http%3A%2F%2Fcdn.doctorswithoutborders.org%2Fsites%2Fusa%2Ffiles%2F50451.jpg" style="width:100%; height:280px;">
+  <img class="mySlides" src="http://www.humanosphere.org/wp-content/uploads/2014/11/MSB12102.jpg" style="width:100%; height:280px;">
+  <img class="mySlides" src="http://www.terramater.at/wp-content/uploads/2014/03/doctors_dedicated_02_graded-943x531.jpg" style="width:100%; height:280px;">
+</div>
+        </div>
+
+<script>
+    var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+        </script>
+
+
+        <div class="col">
+            <img src="http://blogs.msf.org/sites/blogs/files/styles/site_width/public/msb10818_medium.jpg?itok=3Pk9xZ_7" style="width:100%; height:280px;" onclick="Fileopen();Slideon(6)" class="hover over">
+        </div>
+    </div>
+    <div class='row'>
+
+        <div class="col">
+            <img src="https://charity.org/sites/default/files/multimedia/photos/Will_Rose_Doctors_Without_Borders_Greece_2015-23941.jpg" style="width:100%; height:280px;" onclick="Fileopen();Slideon(7)" class="hover over">
+        </div>
+        <div class="col">
+            <img src="https://media.msf.org/Docs/MSF/Media/CMS1/2/7/a/e/MSF155129.jpg" style="width:100%; height:280px;" onclick="Fileopen();Slideon(8)" class="hover over">
+        </div>
+        <div class="col">
+            <img src="https://charity.org/sites/default/files/styles/flexslider_full/public/multimedia/photos/DWB_4_2014.jpg?itok=80SN0ewK" style="width:100%; height:280px;" onclick="Fileopen();Slideon(9)" class="hover over">
+        </div>
+    </div>
+
+    <div class='row'>
+
+        <div class="col">
+            <img src="http://blogs.msf.org/sites/blogs/files/styles/site_width/public/moas_header.jpg?itok=kNvBT0BG" style="width:100%; height:280px;" onclick="Fileopen();Slideon(10)" class="hover over">
+        </div>
+
+
+        <div class="col">
+            <img src="http://www.mladiinfo.eu/wp-content/uploads/bfi_thumb/MSF137503-32ngewf89svcdi3rx8tips.jpg" style="width:100%; height:280px;" onclick="Fileopen();Slideon(11)" class="hover over">
+        </div>
+
+
+        <div class="col">
+            <img src="http://www.doctorswithoutborders.ca/sites/default/files/https://media.msf.org/Docs/MSF/Media/TR1/f/b/7/5/MSF180357.jpg" style="width:100%; height:280px;" onclick="Fileopen();Slideon(12)" class="hover over">
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div id="mypicture-background" class="picture-background">
+        <span class="close cursor" onclick="closeimage()">&times;</span>
+        <div class="gallery">
+
+            <div class="Slides">
+                <div class="numbered">1 / 12</div>
+                <img src="http://ronlinstudios.se/wp-content/uploads/2011/11/56594.jpg" style="width:1000px; height:500px;">
+            </div>
+
+            <div class="Slides">
+                <div class="numbered">2 / 12</div>
+                <img src="https://s-i.huffpost.com/gen/2072206/images/o-DOCTORS-WITHOUT-BORDERS-EBOLA-facebook.jpg" style="width:1000px; height:500px;">
+            </div>
+
+            <div class="Slides">
+                <div class="numbered">3 / 12</div>
+                <img src="https://charity.org/sites/default/files/styles/flexslider_full/public/multimedia/photos/Doctors%20Without%20Borders5.jpg?itok=VK2CGb0d" style="width:1000px; height:500px;">
+            </div>
+
+            <div class="Slides">
+                <div class="numbered">4 / 12</div>
+                <img src="https://vid.alarabiya.net/images/2016/01/19/718ab6b7-687b-4101-a722-3bc2375dc4a5/718ab6b7-687b-4101-a722-3bc2375dc4a5_16x9_788x442.jpg" style="width:1000px; height:500px;">
+            </div>
+
+            <div class="Slides">
+                <div class="numbered">5 / 12</div>
+                <img src="https://images.enca.com/encadrupal/styles/600_383/s3/MSF_Refugee_Boat.jpg" style="width:1000px; height:500px;">
+            </div>
+
+            <div class="Slides">
+                <div class="numbered">6 / 12</div>
+                <img src="http://blogs.msf.org/sites/blogs/files/styles/site_width/public/msb10818_medium.jpg?itok=3Pk9xZ_7" style="width:1000px; height:500px;">
+            </div>
+
+            <div class="Slides">
+                <div class="numbered">7 / 12</div>
+                <img src="https://charity.org/sites/default/files/multimedia/photos/Will_Rose_Doctors_Without_Borders_Greece_2015-23941.jpg" style="width:1000px; height:500px;">
+            </div>
+
+            <div class="Slides">
+                <div class="numbered">8 / 12</div>
+                <img src="https://media.msf.org/Docs/MSF/Media/CMS1/2/7/a/e/MSF155129.jpg" style="width:1000px; height:500px;">
+            </div>
+
+            <div class="Slides">
+                <div class="numbered">9 / 12</div>
+                <img src="https://charity.org/sites/default/files/styles/flexslider_full/public/multimedia/photos/DWB_4_2014.jpg?itok=80SN0ewK" style="width:1000px; height:500px;">
+            </div>
+
+            <div class="Slides">
+                <div class="numbered">10 / 12</div>
+                <img src="http://blogs.msf.org/sites/blogs/files/styles/site_width/public/moas_header.jpg?itok=kNvBT0BG" style="width:1000px; height:500px;">
+            </div>
+
+
+            <div class="Slides">
+                <div class="numbered">11 / 12</div>
+                <img src="http://www.mladiinfo.eu/wp-content/uploads/bfi_thumb/MSF137503-32ngewf89svcdi3rx8tips.jpg" style="width:1000px; height:500px;">
+            </div>
+
+
+            <div class="Slides">
+                <div class="numbered">12 / 12</div>
+                <img src="http://www.doctorswithoutborders.ca/sites/default/files/https://media.msf.org/Docs/MSF/Media/TR1/f/b/7/5/MSF180357.jpg" style="width:1000px; height:500px;">
+            </div>
+
+
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+        </div>
+    </div>
+
+    <script>
+        var elem = $('#gallery')[0];
+
+
+        $(document).on('keydown', function(e) {
+            if (e.keyCode === 27) {
+                $(elem).hide();
+            }
+        });
+
+        function Fileopen() {
+            document.getElementById('mypicture-background').style.display = "block";
+        }
+
+        function closeimage() {
+            document.getElementById('mypicture-background').style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function Slideon(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("Slides");
+            var dots = document.getElementsByClassName("hover");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+</body>
+
+
+
+</html>
+

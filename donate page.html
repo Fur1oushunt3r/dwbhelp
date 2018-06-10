@@ -1,0 +1,699 @@
+<!Doctype html>
+<html>
+
+<head>
+    <script src="donate%20page.js">
+
+
+    </script>
+    <style>
+        @import 'https://fonts.googleapis.com/css?family=Roboto+Slab';
+
+#demo {
+            position: fixed;
+            bottom: 0px;
+            right: 0px;
+            z-index: 1;
+            padding: 5px;
+            margin: 0px;
+        }
+        div.navbar {
+            font-family: 'Roboto Slab', serif;
+            margin: 0 auto;
+            padding: 25px;
+            text-align: center;
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            width: 100%;
+            height: 20px;
+            box-shadow: 5px 5px 5px grey;
+
+
+        }
+
+        div.navbar a {
+            color: #FFF;
+            text-decoration: none;
+            font: 20px 'Roboto Slab', serif;
+            margin: 0px 10px;
+            padding: 10px 10px;
+            position: relative;
+            z-index: 0;
+            cursor: pointer;
+        }
+
+
+        .red {
+            background: #c11f1f;
+        }
+
+
+        div.lines a:before,
+        div.lines a:after {
+            position: absolute;
+            opacity: 0;
+            width: 0%;
+            height: 2px;
+            content: '';
+            background: #fff;
+            transition: all 0.6s;
+        }
+
+        div.lines a:before {
+            left: 0px;
+            top: 0px;
+        }
+
+        div.lines a:after {
+            right: 0px;
+            bottom: 0px;
+        }
+
+        div.lines a:hover:before,
+        div.lines a:hover:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+        div.lines a:hover:before,
+        div.lines a:hover:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+        div.lines a.active:before,
+        div.lines a.active:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+        div.lines a.active:before,
+        div.lines a.active:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+
+        html,
+        body {
+            margin: 0px;
+        }
+
+
+        div.navbar {
+            transform: initial;
+            transform: unset;
+
+            font-family: 'Roboto Slab', serif;
+            margin: 0 auto;
+            padding: 25px;
+            text-align: center;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            width: 100%;
+            height: 20px;
+
+        }
+
+        div.navbar a {
+            color: #FFF;
+            text-decoration: none;
+            font: 20px 'Roboto Slab', serif;
+            margin: 0px 10px;
+            padding: 10px 10px;
+            position: relative;
+            z-index: 0;
+            cursor: pointer;
+        }
+
+
+        .red {
+            background: #c11f1f;
+        }
+
+
+        div.lines a:before,
+        div.lines a:after {
+            position: absolute;
+            opacity: 0;
+            width: 0%;
+            height: 2px;
+            content: '';
+            background: #fff;
+            transition: all 0.6s;
+        }
+
+        div.lines a:before {
+            left: 0px;
+            top: 0px;
+        }
+
+        div.lines a:after {
+            right: 0px;
+            bottom: 0px;
+        }
+
+        div.lines a:hover:before,
+        div.lines a:hover:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+
+        #animation a {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            z-index: 2;
+            display: inline-block;
+            transform: translate(0, -50%);
+
+            color: #fff;
+            font-family: 'Roboto Slab', serif;
+        }
+
+
+        #animation a {
+            padding-top: 60px;
+        }
+
+        #animation a span {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            margin-left: -12px;
+            border-left: 9px solid white;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-animation: anim 2s infinite;
+            animation: anim 2s infinite;
+            box-sizing: border-box;
+        }
+
+        @-webkit-keyframes anim {
+            0% {
+                -webkit-transform: rotate(-45deg) translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes anim {
+            0% {
+                transform: rotate(-45deg) translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(-45deg) translate(-20px, 20px);
+                opacity: 0;
+            }
+        }
+
+        body {
+            margin-top: 90px;
+        }
+
+
+
+
+
+
+
+
+
+        body *:not(.navbar red lines) {
+            font-family: 'Roboto Slab', serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #142F4C;
+        }
+
+        #countdown-box {
+            width: 100%;
+            height: 300px; //border: 1px solid black;
+            padding: 20px;
+            font-family: 'Roboto Slab', serif;
+            max-width: 650px;
+            margin: 25px auto 300px;
+        }
+
+        #goal {
+            font-size: 48px;
+            padding-bottom: 5px;
+            text-align: center;
+            color: #FFF;
+        }
+
+        #glass {
+            width: 100%;
+            height: 20px;
+            background: #c7c7c7;
+            border-radius: 10px;
+            float: left;
+            overflow: auto;
+        }
+
+        #progress {
+            float: left;
+            width: 36%;
+            height: 20px;
+            background: red;
+            z-index: 333;
+            border-radius: 5px;
+        }
+
+        .goal-stat-1 {
+            width: 15%;
+            padding: 10px;
+            float: left;
+            margin: 0;
+            color: #FFF;
+
+
+        }
+
+        .goal-stat-2 {
+            width: 25%;
+            padding: 10px;
+            float: left;
+            margin: 0;
+            color: #FFF;
+
+
+        }
+
+        .goal-stat-3 {
+            width: 49%;
+            padding-top: 10px;
+            float: right;
+            text-align: right;
+            margin: 0;
+            color: #FFF;
+
+
+        }
+
+        #goal-number,
+        .goal-label {
+            display: inline-block;
+        }
+
+        #goal-number {
+            font-weight: bold;
+        }
+
+
+
+
+        blockquote {
+            font-size: 1.4em;
+            width: 70%;
+            margin: 50px auto;
+            font-family: 'Roboto Slab', serif;
+            font-style: italic;
+            color: #555555;
+            padding: 1.2em 30px 1.2em 75px;
+            border-left: 8px solid #78C0A8;
+            border-right: 8px solid #78C0A8;
+            line-height: 1.6;
+            position: relative;
+            background: #EDEDED;
+        }
+
+        blockquote::before {
+            font-family: 'Roboto Slab', serif;
+            content: "\201C";
+            color: #78C0A8;
+            font-size: 4em;
+            position: absolute;
+            left: 10px;
+            top: -10px;
+        }
+
+        blockquote::after {
+            font-family: 'Roboto Slab', serif;
+            content: "\201D";
+            color: #78C0A8;
+            font-size: 4em;
+            position: absolute;
+            right: 20px;
+            bottom: -10px;
+        }
+
+        blockquote span {
+            display: block;
+            color: #333333;
+            font-style: normal;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+
+
+        .all-content {
+            z-index: -1;
+            margin-top: -400px;
+        }
+
+        .donate {
+            background-color: #171b24;
+            width: 500px;
+            position: relative;
+            z-index: 2;
+            /* Make sure its above other items. */
+            top: 50%;
+            left: 50%;
+            margin-left: -250px;
+            /* Your width divided by 2. */
+            color: #FFF;
+
+        }
+
+
+        .donate h2 {
+            font-size: 14px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .denomination {
+            float: left;
+            width: 33%;
+            text-align: center;
+            padding: 13px 0;
+            cursor: pointer;
+            background-color: #171b24;
+            margin: 0 1px 1px 0;
+        }
+
+        .denomination label {
+            font-weight: 600;
+        }
+
+        .denomination input {
+            left: -10001px;
+            position: absolute;
+        }
+
+        .denomination-other {
+            width: 99.8%;
+        }
+
+        .denomination-other input {
+            color: #FFF;
+            font-size: 14px;
+            font-weight: 600;
+            width: inherit;
+            text-align: center;
+            background-color: #171b24;
+            border: none;
+            padding: 13px 0;
+        }
+
+        .denomination-other input:hover {
+            background-color: red;
+        }
+
+        .donate-amount .selected,
+        .donate-amount .denomination:hover {
+            background-color: red;
+            border: 0;
+        }
+
+        .donate-black h2 {
+            font-family: 'Roboto Slab', serif;
+            color: #FFF;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .donate-black h2 span {
+            display: block;
+            font-size: 16px;
+            padding-top: 7px;
+            margin-left: 210px;
+            margin-right: 20px;
+            text-align: center;
+            width: 30px;
+            height: 25px;
+            left: 50%;
+            background-color: #EC3029;
+            border-radius: 50%;
+        }
+
+        .donate-type label,
+        .donate-payment label {
+            font-size: 14px;
+            font-weight: 300;
+            margin-right: 30px;
+        }
+
+        .donate-blue {
+            background-color: #1e252d;
+            padding: 25px;
+        }
+
+        .donate-black {
+            padding: 25px;
+        }
+
+        .donate-submit button {
+            font-family: 'Roboto Slab', serif;
+            width: 100%;
+            background-color: #142F4B;
+            border: none;
+            color: #FFF;
+            font-size: 20px;
+            line-height: 20px;
+            padding: 14px 0;
+            margin: 30px 0;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .donate-submit small {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 13px;
+        }
+
+        ::-webkit-input-placeholder {
+            color: #FFF;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        :-moz-placeholder {
+            color: #FFF;
+            font-weight: 300;
+        }
+
+        ::-moz-placeholder {
+            color: #FFF;
+            font-weight: 300;
+        }
+
+        :-ms-input-placeholder {
+            font-weight: 300;
+            color: #FFF;
+        }
+
+        *:focus {
+            outline: none;
+        }
+
+        button:hover {
+            background-color: red;
+        }
+
+        input[type=text]:focus {
+            background-color: #a50909;
+        }
+
+        .drop-down {
+            background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+            height: 29px;
+            overflow: hidden;
+            width: 240px;
+            background: transparent;
+            border: none;
+            font-size: 14px;
+            height: 29px;
+            padding: 5px;
+            /* If you add too much padding here, the options won't show in IE */
+            width: 268px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            background-color: red;
+            color: white;
+
+        }
+
+    </style>
+
+    <script>
+        function initForm(oForm, element_name, init_txt) {
+            frmElement = oForm.elements[element_name];
+            frmElement.value = init_txt;
+        }
+
+
+
+
+
+        function showFormData(oForm) {
+            var msg = "\n";
+
+            for (i = 0; i < oForm.length, oForm.elements[i].getAttribute("type") !== 'button'; i++) {
+                msg += "You have contributed: ";
+                if (oForm.elements[i].value == null || oForm.elements[i].value == '') {
+                    msg += "€0, please enter a valid amount \n";
+                } else {
+                    msg += "€" + oForm.elements[i].value + "\n";
+                }
+            }
+
+            alert(msg);
+        }
+
+
+
+
+        function myFunction() {
+            var a = 0;
+            document.getElementsById("goal-number").innerHTML = a * a;
+        }
+
+    </script>
+    <link rel="shortcut icon" href="DWB1.ico" />
+
+</head>
+
+
+<body onload="ChangePrice()">
+
+    <div class="navbar red lines">
+        <a alt="Home" href='home%20page.html'>Home</a>
+        <a alt="What" href='What%20they%20do%20page.html'>What do Doctors Without Borders do?</a>
+        <a alt="Gallery" href='Galllery.html'>Gallery</a>
+
+        <a alt="Donate" class='active' href='donate%20page.html'>Donate</a>
+    </div>
+
+
+
+    <blockquote>
+        People are dying, people are suffering- this is a crisis. We cannot watch as this unfolds- we have to push as hard as we can to improve the living conditions of these people
+        <span>Doctors Without Borders</span>
+    </blockquote>
+            <a href='https://www.doctorswithoutborders.org/'><img src="logoDWB.png"  height="200" id="demo"></a>
+
+    <div id=countdown-box>
+        <div id="goal">Goal: $1,000</div>
+        <div class="goal-stat-2">
+            <span id="goal-number"></span>
+            <span class="goal-label">$360 Raised</span>
+        </div>
+        <div id="glass">
+            <div id="progress">
+            </div>
+        </div>
+        <div class="goal-stat-1">
+            <span class="goal-number">36%</span>
+            <span class="goal-label">Funded</span>
+        </div>
+
+        <div class="goal-stat-3">
+            <span class="goal-number"><div id="countdown"></div></span>
+            <span class="goal-label">To complete goal</span>
+        </div>
+
+    </div>
+
+    <br>
+
+    <!----- <div class="donation_wrapper">
+	<div class="title">Donate Here</div>
+       <form>
+       <div class="amount_wrapper">
+		<input id ='output' type="number"  step="0.1" min="1.00" maxlength='2' placeholder="Type your value here">
+		<div class="suffix">€</div>
+           
+	</div>
+	<input class='submit' type="button" name="submit" value="Donate" onclick="showFormData(this.form);" onclick='MyFunction()'>
+       </form>
+</div>----->
+
+
+    <div class='all-content'>
+        <div class="donate">
+            <div class="donate-black">
+                <h2> Donate<br><span>$</span></h2>
+            </div>
+            <div class="donate-blue">
+                <h3>Donation amount*</h3>
+                <div class="donate-amount-box">
+
+                    <select class="drop-down" id="SelectOptions" onchange="myFunction()">
+  <option value="$5">$5
+  <option value="$10">$10
+  <option value="$15">$15
+  <option value="$25">$25
+</select>
+
+
+
+
+                    <div class="donate-amount">
+                        <br>
+                        <div class="denomination-other" id='other-price'>
+                            <input autocomplete="off" type="text" name="amount" value="" placeholder="Enter Other Amount" onkeyup="myFunction22(this.value)">
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function myFunction22(val) {
+                        document.getElementById("value-submit").innerHTML = "Donate $" + val;
+
+                    }
+
+
+                    function myFunction() {
+                        var x = document.getElementById("SelectOptions").value;
+                        document.getElementById("value-submit").innerHTML = "Donate " + x;
+                    }
+
+                    function ChangePrice() {
+                        document.getElementById("value-submit").innerHTML = "Donate $--";
+                    }
+
+                </script>
+                <div class="donate-submit">
+                    <button type="submit" id='value-submit' autocomplete="off" max='100' onclick="window.open('https://form.artsenzondergrenzen.nl/doe-een-gift')" style='target:_blank'></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</body>
+
+
+
+</html>
